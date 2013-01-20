@@ -1,0 +1,53 @@
+﻿@using NauMain
+@model NauMain.Models.Admin.DataContainer<List<NauMain.Models.Admin.Student>>
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
+<script type="text/javascript" src="~/js/lib/jquery.js"></script>
+<script type="text/javascript" src="~/js/script/group.js"></script>
+    </head>
+    <body>
+        <span class="id" id="@Model.DataId"></span>
+        <div id="wrraper">
+            <div class="body">
+                <div class="menu">
+                    <ul>
+                        <li class="list first" id="slide_0">Список групп</li>
+                        <li class="list" id="slide_1">Расписание</li>
+                        <li class="list last active" id="slide_2">Управление студентами</li>
+                    </ul>
+                </div>
+        
+                <div class="control-students main-block first">
+                    <p class="button" id="add_student">Добавить</p>          
+                    <div class="table">
+                        <div class="line-field title">
+                            <span class="numeric-book">Номер зачётки</span>
+                            <span class="fio">ФИО</span>
+                            <span class="pass">Пароль</span>
+                            <span class="numeri-grup-last">Номер подргуппы</span>
+                        </div>
+                        @foreach (var student in Model.Data)
+                        {
+                            <div class="line-field" id="@student.Id">
+                                <span class="numeric-book">@student.Login</span>
+                                <span class="fio">@student.Name</span>
+                                <span class="pass">@student.Password</span>
+                                <span class="numeri-grup-last">@student.SubgroupNumber</span>
+                            </div>
+                            <div><p style="margin-right: 5px">Save Changes</p><p>Remove</p></div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </body>
+</html>

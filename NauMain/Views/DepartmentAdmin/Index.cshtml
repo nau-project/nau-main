@@ -1,0 +1,53 @@
+﻿@model IEnumerable<NauMain.Models.Admin.Teacher>
+    
+    @helper TableRowBuilder(NauMain.Models.Admin.Teacher teacher){
+                        <div class="line-field teacher" id="@teacher.Id">
+                        	<span class="fio">@teacher.Name </span>
+                            <span class="position">@teacher.Possition</span>
+                            <span class="cathedra">Department</span>
+                            <span class="numeric-book">@teacher.Login</span>
+                            <span class="pass">@teacher.Password</span>
+                        </div>         
+}
+
+        <!doctype html>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
+<script type="text/javascript" src="/js/lib/jquery.js"></script>
+<script type="text/javascript" src="~/js/script/department.js"></script>
+<title>Документ без названия</title>
+</head>
+<body>
+<div id="wrraper">
+	<div class="body">
+    	<div class="menu">
+        	<ul class="department">
+            	<li class="list first active" id="slide_0">Список преподавателей</li>
+                <li class="list last" id="slide_1">Расписание</li>
+            </ul>
+        </div>
+        
+        <div class="list-teacher main-block first">
+                <p id="add_teacher">Додати Викладача</p> 
+                <p id="edit_teacher" style="float:right; display: none">Редагувати Викладача</p>              
+            <div class="table">
+                <div class="line-field title">
+                    <span class="fio">ФИО</span>
+                    <span class="position">Должность</span>
+                    <span class="cathedra">Кафедра</span>
+                    <span class="numeric-book">Логин</span>
+                    <span class="pass">Пароль</span>    
+                </div>
+                @foreach (var teacher in Model)
+                {
+                    @TableRowBuilder(teacher);
+                }
+            </div>
+      </div>
+<div style="clear:both;"></div>
+    </div>
+</div>
+</body>
+</html>

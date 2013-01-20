@@ -1,0 +1,110 @@
+﻿@using DataBaseLibrary.Entities
+@model NauMain.Models.Admin.DataContainer<Schedule>
+
+@functions {
+    private string[] dayOfWeek = new string[] {"Понедельник", "Вторник", "Среда", "Четвер", "Пятница", "Субота", "Воскресенье"};
+}
+
+@{
+}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
+        
+        <script type="text/javascript" src="/js/lib/jquery.js"> </script>
+        <script type="text/javascript" src="/js/script/department.js"> </script>    
+
+        <title>Документ без названия</title>
+    
+        @helper buildGroupshcedule(Schedule schedule)
+        {
+            <div class="table first">
+                <p>First Week</p>
+                <div class="line-field title">
+                    <span class="days">Дни</span>
+                    <span class="room">Аудитория</span>
+                    <span class="subject">Предмет</span>
+                    <span class="groop">Група</span>
+                </div>
+                @for (int i = 0; i < 7; i++)
+                {
+                    try
+                    {
+                        @buildDay(schedule.Items.Where(it => it.NumberOfDay == i).OrderBy(it => it.Order).ToList(), i,  dayOfWeek[i], schedule.Id)
+                    }
+                    catch (NullReferenceException)
+                    {
+                        @buildDay(new List<Item>(), i,  dayOfWeek[i], null);
+                    }
+
+                }
+            </div>
+
+            <div class="table last">
+                <p>Second Week</p>
+                <div class="line-field title">
+                    <span class="days">Дни</span>
+                    <span class="room">Аудитория</span>
+                    <span class="subject">Предмет</span>
+                    <span class="groop">Група</span>
+                </div>
+                @for (int i = 7; i < 14; i++)
+                {
+                    try
+                    {
+                        @buildDay(schedule.Items.Where(it => it.NumberOfDay == i).OrderBy(it => it.Order).ToList(), i,  dayOfWeek[i - 7], schedule.Id)
+                    }
+                    catch (NullReferenceException)
+                    {
+                        @buildDay(new List<Item>(), i, dayOfWeek[i - 7], null);
+                    }
+
+                }
+            </div>
+        }
+    
+        @helper buildDay(List<Item> items, int dayNumber, string dayOfWeekName, Guid? scheduleId)
+            {
+            <div class="line-field title">
+                <span class="days">@dayOfWeekName</span>
+                <span class="room"></span>
+                <span class="subject"></span>
+            <span class="groop"><p class="button" id="?scheduleId=@scheduleId&dayNumber=@dayNumber&order=@items.Count">Добавить</p></span>
+            </div>
+
+                foreach (var item in items)
+                {
+                <div class="line-field schedule" id ="?itemId=@item.Id">
+                    <span class="days">@(item.Order + 1)</span>
+                    <span class="room">@item.Audience</span>
+                    <span class="subject">@item.CourceName</span>
+                    <span class="groop">@item.AdditionalInformation</span>
+                </div>
+                }        
+       }
+
+    </head>
+    <body>
+        <span class="id" id="@Model.DataId"></span>
+        <div id="wrraper">
+            <div class="body">
+                <div class="menu">
+                    <ul>
+                        <li class="list first" id="slide_0">Список Викладачів</li>
+                        <li class="list active" id="slide_1">Расписание</li>
+                    </ul>
+                </div>
+        
+                <div class="timetable main-block first">
+                    
+                    @buildGroupshcedule(Model.Data);
+                    
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </body>
+</html>

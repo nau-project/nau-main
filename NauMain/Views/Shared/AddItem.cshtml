@@ -1,0 +1,51 @@
+﻿@model NauMain.Models.Admin.Item
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+            @using (Html.BeginForm())
+            {
+                <div style="display: none">
+                    <input type ="text" id ="ScheduleId" name ="ScheduleId" value="@Model.ScheduleId"/>
+                    @Html.EditorFor(m => m.DataId)
+                    @Html.EditorFor(m => m.Id)
+                    @Html.EditorFor(m => m.NumberOfDay)
+                    @Html.EditorFor(m => m.Order)
+                    @Html.EditorFor(m => m.EntityId)
+
+                </div>
+                <div class="editor-field">
+                    @Html.LabelFor(m => m.CourceName)
+                    @Html.EditorFor(m => m.CourceName)
+                </div>
+                <div class="editor-field">
+                    @Html.LabelFor(m => m.Audience)
+                    @Html.EditorFor(m => m.Audience)
+                </div>
+                <div class="editor-field">
+                    @Html.LabelFor(m => m.AdditionalInformation)
+                    @Html.EditorFor(m => m.AdditionalInformation)
+                </div>
+                <button type="submit">Add</button>
+           }
+        @using (Html.BeginForm("DeleteItem", Html.ViewContext.RouteData.GetRequiredString("controller")))
+        {
+            if (Model.Id != null)
+             {
+                 <div style="display: none">
+                     <input type="text" name="itemId" id="itemId" value="@Model.Id"/>
+                     <input type="text" name="dataId" id="dataId" value="@Model.DataId"/>
+                </div>   
+                <button type="submit" id="del-teacher">Delete</button>
+             }
+        }
+    </body>
+</html>

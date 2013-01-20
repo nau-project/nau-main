@@ -1,0 +1,54 @@
+﻿@using NauMain
+@model NauMain.Models.Admin.DataContainer<List<NauMain.Models.Admin.Group>>
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
+<script type="text/javascript" src="~/js/lib/jquery.js"></script>
+<script type="text/javascript" src="~/js/script/group.js"></script>
+<title>Документ без названия</title>
+</head>
+<body>
+<div id="wrraper">
+    <div class="body">
+        @if (@Model.DataId != null)
+        {
+            <span class="id" id="@Model.DataId"></span>
+        }
+        <div class="menu">
+            <ul>
+                <li class="list first active" id="slide_0">Список групп</li>
+                <li class="list" id="slide_1">Расписание</li>
+                <li class="list last" id="slide_2">Управление студентами</li>
+            </ul>
+        </div>
+        
+        <div class="list-grup main-block first">
+           
+            <div class="add-grup-block">
+              @using (Html.BeginForm())
+              {
+                  @Html.Editor("groupName");
+                  <input type="submit" value="submit" id="add_gr" style="display: none;"/>
+              }
+              <span>Добавить группу</span>
+            </div>
+            
+            <div class="block-list-grup">
+                @foreach(var group in Model.Data)
+                {
+                    <span id="@group.Id"><div></div>@group.Name</span> 
+                }
+            </div>
+        </div>
+       
+    </div>
+</div>
+</body>
+</html>

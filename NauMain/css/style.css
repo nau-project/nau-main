@@ -1,0 +1,158 @@
+*{margin:0;padding:0;font-family:verdana;}
+
+#wrraper{width:100%;}
+body{background:url('/img/bg_body.jpg');}
+#wrraper .body{width:1180px;margin:auto;min-height:100px;padding:0px 10px 0px 10px;}
+
+/*.menu ul li{font-weight:bold;list-style:none;float:left;padding:5px 0 5px 0;width:483px;text-align:center;background:#FFF;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,1);cursor:pointer;}
+
+.menu ul li.first{margin-right:10px;}
+
+.menu ul li:hover{background:#09F;color:white;}
+
+.menu ul li.active{background:#09F;color:white;}*/
+.main-block{border:2px solid #429CDD;border-radius:0 0 10px 10px;float:left;width:936px;padding:20px;background:#FFF;}
+.menu{float:left;width:100%;}
+.menu li{font-weight:bold;cursor:pointer;list-style:none;float:left;background:#e0dfdf;padding:15px 45px 15px 45px;border-top:1px solid #737373;border-left:1px solid #737373;border-right:1px solid #737373;border-radius:8px 8px 0 0;}
+.menu li.active{background:#3d9cfd;color:white;}
+
+
+.main-block{position:absolute;left:-9000px;float:left;width:100%;}
+.main-block.first{position:relative;left:0;}
+.list-teacher{float:left;width:100%;}
+
+.list-teacher p{color:#5b5b5b;
+background:-o-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background:-moz-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -webkit-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -ms-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+float:left;padding:7px 20px 7px 20px;border-radius:10px;cursor:pointer;border:1px solid #bababa;}
+
+.list-teacher p:hover{color:#FFF;
+background:#696868;
+}
+
+.list-teacher .table{width:100%;margin-top:50px;border:1px solid #cbcbca;border-radius:5px;}
+.list-teacher .table .line-field.last{border-radius:0 0 5px 5px;}
+
+.list-teacher .table .line-field{width:100%;}
+
+.list-teacher .table .line-field:nth-child(even){background:#FFF;}
+.list-teacher .table .line-field:nth-child(odd){background:#e2e2e3;}
+
+.list-teacher .table .line-field.title{border-radius:5px;background:#464646 !important;color:white;font-weight:bold;cursor:auto !important;}
+
+.list-teacher .table .line-field:hover{cursor:pointer;background:#3d9cfd;color:white;}
+.list-teacher .table .line-field span{display:table-cell;padding:5px;}
+
+.list-teacher .table .line-field span.fio{width:390px;}
+.list-teacher .table .line-field span.position{width:140px;border-left:1px solid #cbcbca;}
+.list-teacher .table .line-field span.cathedra{border-left:1px solid #cbcbca;width:190px;}
+.list-teacher .table .line-field span.numeric-book{border-left:1px solid #cbcbca;width:190px;}
+.list-teacher .table .line-field span.pass{border-left:1px solid #cbcbca;width:190px;}
+
+
+
+.menu{padding-top:15px;}
+.add-grup-block,.block-list-grup{float:left;width:100%;}
+.block-list-grup span{float:left;padding:4px 5px 4px 5px;cursor:pointer;margin-right:5px;}
+.block-list-grup span:hover{background:#4798f5;color:white;}
+.block-list-grup span div{opacity:0.5;background:url('/img/close.png') 0 1px no-repeat;float:right;width:15px;height:18px;margin-left:5px;display:none;cursor:pointer;}
+.block-list-grup span div:hover{opacity:1;}
+.block-list-grup span:hover div{display:block;}
+.add-grup-block span{padding:3px 9px 3px 9px;border:4px solid #6e7172;float:left;background:#cdcfd0;border-radius:0 15px 15px 0;margin-left:4px;cursor:pointer;}
+.add-grup-block span:hover{background:#3D9CFD;color:white;}
+.add-grup-block input{float:left;border:4px solid #6e7172;height:24px;border-radius:15px 0 0 15px;width:250px;padding-left:10px;padding-right:5px;}
+.block-list-grup{margin-top:15px;}
+
+/*.timetable .table.first{float:left;width:400px;}
+.timetable .table.last{float:right;width:400px;}
+
+.timetable .table{border-bottom:1px solid black;margin-top:50px;}
+
+.timetable .table .line-field span{display:table-cell;padding:4px;}
+.timetable .table .line-field.title{background:#666 !important;color:#FFF;font-weight:bold;}
+.timetable .table .line-field.title span.days{border-top:1px solid black;}
+.timetable .table .line-field.title span.room{border-top:1px solid black;}
+.timetable .table .line-field.title span.subject{border-top:1px solid black;}
+.timetable .table .line-field.title span.groop{border-top:1px solid black;}
+
+.timetable .table .line-field span.days{width:150px;border-left:1px solid black;}
+.timetable .table .line-field span.room{width:83px;border-left:1px solid black;}
+.timetable .table .line-field span.subject{width:83px;border-left:1px solid black;}
+.timetable .table .line-field span.groop{width:83px;border-right:1px solid black;border-left:1px solid black;}
+
+.timetable .table p{text-align:center;}*/
+
+.timetable{float:left;width:100%;}
+
+.timetable .table{float:left;width:550px;}
+.timetable .table.last{float:right;}
+
+.timetable .table .line-field.title{background:#464646 !important;color:white;cursor:auto !important;}
+.timetable .table .line-field{border:1px solid #c6c9cd;border-bottom:none;border-right:none;}
+.timetable .table .line-field.last{border-bottom:1px solid #c6c9cd;border-radius:0 0 5px 5px;}
+.timetable .table .line-field.last span.groop{border-radius:0 0 5px 0;}
+.timetable .table .line-field span{display:table-cell;border-right:1px solid #c6c9cd;padding:4px;}
+.timetable .table .line-field span.days{width:140px;}
+.timetable .table .line-field span.room{width:100px;}
+.timetable .table .line-field span.subject{width:140px;}
+.timetable .table .line-field span.groop{width:133px;}
+
+.timetable .table p{text-align:center;margin-bottom:5px;}
+.timetable .table .line-field:nth-child(odd){background:#FFF;}
+.timetable .table .line-field:nth-child(even){background:#e2e2e3;}
+.timetable .table .line-field:hover{cursor:pointer;background:#3d9cfd;color:white;}
+
+.timetable .edit{color:#5b5b5b;
+background:-o-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background:-moz-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -webkit-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -ms-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+float:right;padding:7px 20px 7px 20px;border-radius:10px;cursor:pointer;border:1px solid #bababa;}
+
+.timetable .edit:hover{color:#FFF;
+background:#696868;
+}
+
+.timetable .teacher{margin-bottom:25px;}
+
+.control-students .table,.control-students{float:left;width:100%;}
+
+.control-students .line-field.title{background:#464646 !important;color:white;}
+.control-students .line-field:nth-child(even){background:#FFF;}
+.control-students .line-field:nth-child(odd){background:#e2e2e3;}
+.control-students .line-field:hover{cursor:pointer;background:#3d9cfd;color:white;}
+
+.control-students .line-field{border:1px solid #c6c9cd;border-bottom:none;border-right:none;}
+.control-students .line-field span{border-right:1px solid #c6c9cd;display:table-cell;padding:5px;}
+.control-students .line-field.last{border-bottom:1px solid #c6c9cd;}
+
+.control-students .line-field span.numeric-book{width:200px;}
+.control-students .line-field span.fio{width:374px;}
+.control-students .line-field span.pass{width:200px;}
+.control-students .line-field span.numerik-grup{width:200px;}
+.control-students .line-field span.numeri-grup-last{width:200px;}
+
+p.button{
+	float:left;
+	margin-bottom:25px;
+	color:#5b5b5b;
+background:-o-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background:-moz-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -webkit-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: -ms-linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+background: linear-gradient(top, #ededed 10%,#cfcfcf 100%);
+float:left;padding:7px 20px 7px 20px;border-radius:10px;cursor:pointer;border:1px solid #bababa;}
+
+p.button:hover{color:#FFF;
+background:#696868;
+}
+.list-teacher .selected {
+    background-color: green !important;
+}
+.block-list-grup .selected {
+    background-color: green !important;
+}

@@ -1,0 +1,51 @@
+﻿@model NauMain.Models.Admin.Teacher
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
+<script type="text/javascript" src="~/js/lib/jquery.js"></script>
+<script type="text/javascript" src="~/js/script/group.js"></script>
+<title>Документ без названия</title>
+</head>
+    <body>
+        <h2>EditTeacher</h2>
+
+        @using (Html.BeginForm())
+        {
+            <div class="edit-field">
+            @Html.LabelFor(m => m.Login)
+            @Html.EditorFor(m => m.Login)
+            </div>
+            <div class="edit-field">
+                @Html.LabelFor(m => m.Name)
+                @Html.EditorFor(m => m.Name)
+            </div>
+            <div class="edit-field">
+                @Html.LabelFor(m => m.Possition)
+                @Html.EditorFor(m => m.Possition)
+            </div>
+            <div class="edit-field">
+                @Html.LabelFor(m => m.Password)
+                @Html.EditorFor(m => m.Password)
+            </div>
+            <div class="edit-field">    
+                @Html.LabelFor(m => m.Id)
+                @Html.EditorFor(m => m.Id)
+            </div>
+            
+            <button type="submit">Save</button>
+        }
+        @using (Html.BeginForm("DeleteTeacher","DepartmentAdmin"))
+        {
+            if (Model.Id != null)
+             {
+                 <div style="display: none">
+                     <input type="text" name="teacgherId" id="teacherId" value="@Model.Id"/>
+                </div>   
+                <button type="submit" id="del-teacher">Delete</button>
+             }
+        }
+    </body>
+</html>
+
