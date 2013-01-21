@@ -5,7 +5,7 @@ var baseUrl = window.location.origin;
 $(function () {
 
     groupId = groupId == undefined ? $('.id').attr('id') : groupId;
-
+    $
     $("#Id").hide();
     $("label[for='Id']").hide();
 
@@ -18,7 +18,7 @@ $(function () {
 
         if (a == true) {
             alert("Группа '" + grup + "' была удалена");
-            window.open(baseUrl + '/Groups/Delete/' + $(this).parent('span').attr('id'), '_self', null, false);
+            window.open(baseUrl + '/Groups/DeleteGroup/' + $(this).parent('span').attr('id'), '_self', null, false);
         }
     });
     

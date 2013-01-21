@@ -1,16 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using DBLE = DataBaseLibrary.Entities;
 using Newtonsoft.Json;
 
 namespace NauMain.Models.Admin
 {
-    [JsonObject]
     public class Teacher : Member
     {
 
-        [JsonProperty]
+        [Display(Name = "Посада")]
         public string Possition { set; get; }
-
+        
         public Teacher(DBLE.Teacher teacher):base(member: teacher)
         {
             Possition = teacher.Possition; 

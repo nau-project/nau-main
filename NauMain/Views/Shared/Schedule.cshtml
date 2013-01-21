@@ -15,14 +15,19 @@
         <link type="text/css" rel="stylesheet" media="all" href="/css/style.css" />
         <script type="text/javascript" src="/js/lib/jquery.js"> </script>
 
-        <script type="text/javascript" src="/js/script/group.js"> </script>    
+        <script type="text/javascript" src="/js/script/group.js"> </script> 
+        <script type="text/javascript">
+            $(function() {
+                $('.fixable_0').height(Math.max($('.table.first').first().height(), $('.table.last').first().height()) + 35);
+            })
+        </script>    
 
         <title>Документ без названия</title>
     
         @helper buildGroupshcedule(Schedule schedule, int numb)
         {
             <div class="table first">
-                <p>First Week</p>
+                <p>Перший тиждень</p>
                 <div class="line-field title">
                     <span class="days">Дни</span>
                     <span class="room">Аудитория</span>
@@ -44,7 +49,7 @@
             </div>
 
             <div class="table last">
-                <p>Second Week</p>
+                <p>Другий тиждень</p>
                 <div class="line-field title">
                     <span class="days">Дни</span>
                     <span class="room">Аудитория</span>
@@ -102,7 +107,11 @@
                 <div class="timetable main-block first">
                     @for (int i = 0; i < Model.Data.Count; i++ )
                     {
-                        @buildGroupshcedule(Model.Data[i], i)
+                        <div class="fixable_@i">
+                            <h4>@(i+1) -a Підгрупа</h4>
+                            @buildGroupshcedule(Model.Data[i], i)
+                        </div>
+                        
                     }
                 </div>
                 <div style="clear: both;"></div>

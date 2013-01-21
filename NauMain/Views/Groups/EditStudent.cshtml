@@ -13,33 +13,42 @@
 
         @using (Html.BeginForm())
         {
+            <div class="editor-field">
             @Html.LabelFor(m => m.Login)
             @Html.EditorFor(m => m.Login)
-            
+            </div>
+            <div class="editor-field">
             @Html.LabelFor(m => m.Name)
             @Html.EditorFor(m => m.Name)
-            
+            </div>
+            <div class="editor-field">
             @Html.LabelFor(m => m.Password)
             @Html.EditorFor(m => m.Password)
-
+            </div>
+            <div class="editor-field">
             @Html.LabelFor(m => m.SubgroupNumber)
             @Html.EditorFor(m => m.SubgroupNumber)
-
+            </div>
+            <div class="editor-field">
             @Html.LabelFor(m => m.Id)
             @Html.EditorFor(m => m.Id)
-
+            </div>
+            <div class="editor-field">
             @Html.LabelFor(m => m.GroupId)
             @Html.EditorFor(m => m.GroupId)
-
+            </div>
             <button type="submit">Save</button>
         }
         @using (Html.BeginForm("DeleteStudent","Groups"))
         {
             if (Model.Id != null)
              {
-                <input type="text" name="groupId" id="groupId" value="@Model.GroupId"/>
-                <input type="text" name="studentId" id="studentId" value="@Model.Id"/>    
-                <button type="submit" id="del-student">Delete</button>
+                 <div style="display: none">
+                      <input type="text" name="groupId" id="groupId" value="@Model.GroupId"/>
+                      <input type="text" name="studentId" id="studentId" value="@Model.Id"/>    
+                      <button type="submit" id="del-student">Delete</button>
+                 </div>
+               
              }
         }
     </body>
